@@ -118,7 +118,7 @@ Aprender y profundizar en los conceptos que más nos interesen
 - 2 horas de teoría
 - 2 horas de prácticas en laboratorio
 
-Grupos de 2 estudiantes
+Grupos de tres estudiantes
 
 - Salvo cuestionarios, claro
 - Todas las actividades obligatorias permiten llegar al notable
@@ -170,7 +170,7 @@ Normas para la realización de los cuestionarios:
 
 Normas para la realización de las prácticas:
 
-- Se realizan en grupos de 2 estudiantes
+- Se realizan en grupos de tres estudiantes
 - Es **imprescindible que el código ejecute sin errores** para aprobar la práctica
 - Se valorará:
   - Si se ajusta a los requisitos del enunciado
