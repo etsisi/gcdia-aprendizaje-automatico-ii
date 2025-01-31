@@ -1,0 +1,42 @@
+name: build-and-deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Copy static data 📚
+        run: |
+          mkdir -p build
+          mkdir -p build/slides
+
+      - name: Build MARP slides PDFs 🛝
+        uses: docker://marpteam/marp-cli:v1.7.0
+        with:
+          args: -I slides/ -o build/slides/ --pdf --html --allow-local-files --theme-set slides/styles/
+        env:
+          MARP_USER: root:root
+  
+      - name: Build MARP HTML slides 🛝
+        uses: docker://marpteam/marp-cli:v1.7.0
+        with:
+          args: -I slides/ -o build/slides/ --html --allow-local-files --theme-set slides/styles/
+        env:
+          MARP_USER: root:root
+    
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./build/
+          clean-exclude: pr-preview/

@@ -1,0 +1,5 @@
+{
+    "markdown.marp.themes": ["slides/styles/etsisi.css"],
+    "markdown.marp.html": "all",
+    "git.ignoreLimitWarning": true,
+}
